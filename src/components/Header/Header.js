@@ -1,21 +1,29 @@
-import classes from "./Header.scss";
+
+import { useRef } from 'react';
+import classes from "./Header.module.scss";
 import { useState } from "react";
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
   const [showBlock, setShowBlock] = useState(false);
 
-  const changeVisabilityHeader = () => {
-    if (window.scrollY >= 80) {
+  const headerRef = useRef();
+
+  const changeVisibilityHeader = () => {
+    console.log(headerRef);
+    if (window.scrollY >= headerRef.current.clientHeight) {
       setShowHeader(true);
     } else {
       setShowHeader(false);
     }
   }
-  window.addEventListener('scroll', changeVisabilityHeader);
+
+
+  window.removeEventListener('scroll', changeVisibilityHeader);
+  window.addEventListener('scroll', changeVisibilityHeader);
 
   return (
-    <div className={showHeader ? "header-hide" : "header-show"}>
+    <div className={showHeader ? classes.headerHide : classes.headerShow} ref={headerRef}>
 
       <div className="left-part">
         <div className="logo" />
