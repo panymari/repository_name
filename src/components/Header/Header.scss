@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.header-hide{
+    background-color: black;
+    color:white;
+    font: {
+        family:'New Cycle', sans-serif;
+        weight: 400;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+
+    position: fixed;
+    top: -1000px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    transition: top 5s;
+}
+
+.header-show{
+    background-color: black;
+    color:white;
+    font: {
+        family:'New Cycle', sans-serif;
+        weight: 400;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;    
+    transition: top 0.3s;
+}
+.logo{
+    background: {
+        image: url("../../assets/logo.png");
+        position: center;
+        repeat: no-repeat;
+    }
+    width: 40px;
+    height: 40px;
+}
+.right-part{
+    font-size: 30px;
+    display: flex;
+}
+.left-part{
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+}
+.slogan{
+    font-size: 20px;
+    margin: 0 30px;
+}
+.right-part > div:not(:first-child){
+    margin-left: 30px;
+}
+.angle-down-block{
+    display: flex;
+    padding: 20px;
+    height: 100%;
+    align-items: center;
+    &:hover{
+        background-color: #393939;
+    }
+}
+.angle-down-block > div{
+    margin-right: 10px;
+}
+.angle-down-block > i{
+    font-size: 25px;
+} 
+.ellipsis-icon > i:nth-child(2n){
+    margin: 0 2px;
+}
