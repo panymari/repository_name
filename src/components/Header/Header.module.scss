@@ -19,7 +19,7 @@
     right: 0;
     left: 0;
     width: 100%;
-    transition: top 5s;
+    transition: all 4s ease;
 }
 
 .headerShow{
@@ -39,7 +39,7 @@
     right: 0;
     left: 0;
     width: 100%;    
-    transition: top 0.3s;
+    transition: all 1s ease;
 }
 .logo{
     background: {
@@ -50,11 +50,11 @@
     width: 40px;
     height: 40px;
 }
-.right-part{
+.rightPart{
     font-size: 30px;
     display: flex;
 }
-.left-part{
+.leftPart{
     display: flex;
     align-items: center;
     font-size: 17px;
@@ -63,10 +63,10 @@
     font-size: 20px;
     margin: 0 30px;
 }
-.right-part > div:not(:first-child){
+.rightPart > div:not(:first-child){
     margin-left: 30px;
 }
-.angle-down-block{
+.angleDownBlock{
     display: flex;
     padding: 20px;
     height: 100%;
@@ -75,12 +75,23 @@
         background-color: #393939;
     }
 }
-.angle-down-block > div{
+.angleDownBlock > div{
     margin-right: 10px;
 }
-.angle-down-block > i{
+.angleDownBlock > i{
     font-size: 25px;
 } 
-.ellipsis-icon > i:nth-child(2n){
+.ellipsisIcon > i:nth-child(2n){
     margin: 0 2px;
+}
+.blockHide{
+    display: none;
+}
+.blockShow{
+    text-align: start;
+    padding: 20px 40px 20px 20px;
+    background-color: black;
+    position: fixed;
+    top: 65px;
+    transition: all 0.3s ease;
 }
