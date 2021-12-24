@@ -1,7 +1,9 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Header.module.scss';
-import { useState, useEffect, useRef } from 'react';
+import BlockItem from './BlockItem';
 
-const Header = () => {
+const Header = function ({ data }) {
   const [showHeader, setShowHeader] = useState(false);
 
   const headerRef = useRef();
@@ -18,7 +20,7 @@ const Header = () => {
     window.addEventListener('scroll', () => window.requestAnimationFrame(changeVisibilityHeader));
 
     return () => window.removeEventListener('scroll', () => window.cancelAnimationFrame(changeVisibilityHeader));
-  }, [showHeader]);
+  }, []);
 
   return (
     <div className={showHeader ? classes.headerHide : classes.headerShow} ref={headerRef}>
@@ -27,7 +29,7 @@ const Header = () => {
         <div className={classes.slogan}>Your Learning at IBM</div>
         <div className={classes.angleDownBlock}>
           <div>Recommendations</div>
-          <i class="fa fa-angle-down"></i>
+          <i className="fa fa-angle-down" />
           <div className={classes.block}>
             <div>block 1</div>
             <div>block 2</div>
@@ -36,7 +38,7 @@ const Header = () => {
         </div>
         <div className={classes.angleDownBlock}>
           <div>Learning</div>
-          <i class="fa fa-angle-down"></i>
+          <i className="fa fa-angle-down" />
           <div className={classes.block}>
             <div>block 1</div>
             <div>block 2</div>
@@ -45,29 +47,31 @@ const Header = () => {
         </div>
         <div className={classes.angleDownBlock}>
           <div>Team</div>
-          <i class="fa fa-angle-down"></i>
+          <i className="fa fa-angle-down" />
           <div className={classes.block}>
-            <div>block 1</div>
-            <div>block 2</div>
-            <div>block 3</div>
+            {data?.map((item) => (
+              <Link to={`/user/${item.id}`}>
+                <BlockItem item={item} />
+              </Link>
+            ))}
           </div>
         </div>
       </div>
 
       <div className={classes.rightPart}>
         <div>
-          <i class="fa fa-search"></i>
+          <i className="fa fa-search" />
         </div>
         <div>
-          <i class="fa fa-question-circle"></i>
+          <i className="fa fa-question-circle" />
         </div>
         <div>
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <i aria-hidden="true" className="fa fa-user" />
         </div>
         <div className={classes.ellipsisIcon}>
-          <i class="fa fa-ellipsis-v"></i>
-          <i class="fa fa-ellipsis-v"></i>
-          <i class="fa fa-ellipsis-v"></i>
+          <i className="fa fa-ellipsis-v" />
+          <i className="fa fa-ellipsis-v" />
+          <i className="fa fa-ellipsis-v" />
         </div>
       </div>
     </div>

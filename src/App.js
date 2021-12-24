@@ -1,99 +1,31 @@
+import React, { Suspense, useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import axios from 'axios';
 import Header from './components/Header/Header';
 import classes from './App.module.scss';
+import UserPage from './components/User/UserPage';
 
-const App = () => {
+const App = function () {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/users').then((response) => {
+      setUsers(response.data);
+    });
+  }, []);
+
   return (
-    <div className={classes.App}>
-      <Header />
-      <p>
-        Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br />
-        <br />
-        <br />
-        <br />
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br />
-        <br />
-        <br />
-        <br />
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit <br />
-        <br />
-        <br />
-        <br />
-        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, <br />
-        <br />
-        <br />
-        <br />
-        sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br />
-        <br />
-        <br />
-        <br />
-      </p>
-      <p>
-        Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do <br />
-        <br />
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <br />
-        <br />
-        <br />
-        <br />
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br />
-        <br />
-        <br />
-        <br />
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat <br />
-        <br />
-        <br />
-        <br />
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br />
-        <br />
-        <br />
-        <br />
-      </p>
-      <p>
-        Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br />
-        <br />
-        <br />
-        <br />
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br />
-        <br />
-        <br />
-        <br />
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit <br />
-        <br />
-        <br />
-        <br />
-        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, <br />
-        <br />
-        <br />
-        <br />
-        sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br />
-        <br />
-        <br />
-        <br />
-      </p>
-      <p>
-        Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do <br />
-        <br />
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <br />
-        <br />
-        <br />
-        <br />
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br />
-        <br />
-        <br />
-        <br />
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat <br />
-        <br />
-        <br />
-        <br />
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br />
-        <br />
-        <br />
-        <br />
-      </p>
-    </div>
+    <Router>
+      <div className={classes.App}>
+        <Header data={users} />
+
+        <Suspense fallback="Loading page...">
+          <Redirect to="/" />
+          <Switch>
+            <Route exact path="/user/:id" render={(props) => <UserPage {...props} data={users} />} />
+          </Switch>
+        </Suspense>
+      </div>
+    </Router>
   );
 };
 

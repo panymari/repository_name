@@ -16,7 +16,7 @@ const ERROR = 2;
 module.exports = {
   plugins: ['import', 'react-hooks'],
   extends: ['airbnb', 'plugin:prettier/recommended'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   settings: {
     'import/resolver': {
       node: {
