@@ -27,6 +27,7 @@ module.exports = {
   },
   root: true,
   rules: {
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'import/order': ERROR,
     'react/prop-types': OFF,
     /* see https://github.com/yannickcr/eslint-plugin-react/issues/976 */
@@ -163,5 +164,11 @@ module.exports = {
     i18n: true,
     yl: true,
     APP_VERSION: true,
+  },
+  parserOptions: {
+    requireConfigFile: false,
+    ecmaVersion: 8,
+    ecmaFeatures: { jsx: true },
+    babelOptions: { presets: ['@babel/preset-react'] },
   },
 };

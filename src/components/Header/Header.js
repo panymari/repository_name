@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import classes from './Header.module.scss';
 import BlockItem from './BlockItem';
 
-const Header = function ({ data }) {
+const Header = ({ data }) => {
   const [showHeader, setShowHeader] = useState(false);
 
   const headerRef = useRef();

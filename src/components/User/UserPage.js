@@ -1,7 +1,6 @@
-import React from 'react';
-
-const UserPage = function ({ item }) {
-  return <div>{item.nam}</div>;
+const UserPage = ({ data }) => {
+  console.log(data);
+  return null;
 };
 
 export default UserPage;
