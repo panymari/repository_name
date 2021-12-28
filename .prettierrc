@@ -3,6 +3,12 @@
   "trailingComma": "es5",
   "singleQuote": true,
   "printWidth": 140,
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    }
+  ],
   "overrides": [
     {
       "files": "*.json",

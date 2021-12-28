@@ -17,7 +17,7 @@ const Users = () => {
   return (
     <div className={classes.users}>
       {data?.map((item) => (
-        <Link to={`/user/${item.id}`}>
+        <Link to={`/user/${item.id}`} key={item.id}>
           <User item={item} />
         </Link>
       ))}
