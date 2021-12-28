@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import classes from './UserPage.module.scss';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import useFetch from '../Hooks/useFetch';
+import useFetch from '../../Hooks/useFetch';
 
 const UserPage = () => {
   const params = useParams();

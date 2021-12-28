@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Users.module.scss';
 import User from './User';
-import useFetch from '../Hooks/useFetch';
+import useFetch from '../../Hooks/useFetch';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
 
@@ -17,7 +17,7 @@ const Users = () => {
   return (
     <div className={classes.users}>
       {data?.map((item) => (
-        <Link to={`/user/${item.id}`} key={item.id}>
+        <Link key={item.id} to={`/user/${item.id}`}>
           <User item={item} />
         </Link>
       ))}
