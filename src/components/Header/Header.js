@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Header.module.scss';
-import BlockItem from './BlockItem';
 
-const Header = ({ data }) => {
+const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
 
   const headerRef = useRef();
@@ -49,11 +48,9 @@ const Header = ({ data }) => {
           <div>Team</div>
           <i className="fa fa-angle-down" />
           <div className={classes.block}>
-            {data?.map((item) => (
-              <Link to={`/user/${item.id}`}>
-                <BlockItem item={item} />
-              </Link>
-            ))}
+            <div className={classes.link}>
+              <Link to="/users">Users</Link>
+            </div>
           </div>
         </div>
       </div>

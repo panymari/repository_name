@@ -1,10 +1,27 @@
+*{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.link > a{
+    text-decoration: none;
+    color: white;
+    top: 0;
+    padding: 20px;
+    left: 0;
+    width: 200px;
+    height: 60px;
+    background-color: black;
+    position: absolute;
+    &:hover{
+        background-color: #393939;
+        cursor: pointer;
+    }
+}
 .headerHide{
     background-color: black;
     color:white;
-    font: {
-        family:'New Cycle', sans-serif;
-        weight: 400;
-    }
+    font-weight: 400;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,10 +38,7 @@
 .headerShow{
     background-color: black;
     color:white;
-    font: {
-        family:'New Cycle', sans-serif;
-        weight: 400;
-    }
+    font-weight: 400;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,6 +111,7 @@
     display: none;
 }
 .block > div{
+    position: relative;
     padding: 20px 150px 20px 20px;
     &:hover{
         background-color: #393939;

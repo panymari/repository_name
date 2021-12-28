@@ -1,0 +1,31 @@
+.userItem{
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    box-shadow: 6px 5px 5px rgba(196, 196, 196, 0.438);
+    border-radius: 12px;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+}
+.name{
+    font: {
+        size: 20px;
+        weight: 600;
+    }
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    width: 160px; 
+    white-space: nowrap;
+}
+.userName{
+    margin-top: 8px;
+    font: {
+        size: 16px;
+        weight: 400;
+    }
+    color: rgb(110, 110, 110);
+}
+.userIcon > i{
+    color: #cfc6ff;
+}

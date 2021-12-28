@@ -1,0 +1,39 @@
+.userPage{
+    width: 550px;
+    margin: 150px auto 0 auto;
+}
+.userPhoto{
+    width: 250px;
+    height: 250px;
+    background-color: #cfc6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userPhoto i{
+    color: whitesmoke;
+}
+.name{
+    font: {
+        size: 25px;
+        weight: 600;
+    }
+}
+.userName{
+    margin: 15px 0;
+    font: {
+        size: 18px;
+        weight: 400;
+    }
+    color: rgb(110, 110, 110);
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+}
+span{
+    font: {
+        size: 18px;
+        weight: 600;
+    }
+}
