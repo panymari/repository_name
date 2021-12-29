@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import classes from './UserPage.module.scss';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import useFetch from '../../Hooks/useFetch';
+import { UserContext } from './UserContext';
 
 const UserPage = () => {
   const params = useParams();
   const id = Number(params.id);
-  const { isLoading, isError, data } = useFetch('https://jsonplaceholder.typicode.com/users');
+  const { isLoading, isError, data } = useContext(UserContext);
   if (isLoading) {
     return <LoadProgressBar />;
   }
   if (isError) {
-    return <ErrorMessage />;
+    return <ErrorMessage item="Could not load this user." />;
   }
   return (
     <div className={classes.userPage}>

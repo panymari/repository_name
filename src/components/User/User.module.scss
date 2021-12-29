@@ -2,26 +2,26 @@
     display: flex;
     justify-content: space-between;
     background-color: whitesmoke;
-    box-shadow: 6px 5px 5px rgba(196, 196, 196, 0.438);
-    border-radius: 12px;
-    width: 300px;
-    height: 150px;
-    padding: 20px;
+    box-shadow: 0.45rem 0.4rem 0.4rem rgba(196, 196, 196, 0.438);
+    border-radius: 0.75rem;
+    width: 18.75rem;
+    height: 9rem;
+    padding: 1.25rem;
 }
 .name{
     font: {
-        size: 20px;
+        size: 1.25rem;
         weight: 600;
     }
     text-overflow: ellipsis;
     overflow: hidden; 
-    width: 160px; 
+    width: 10rem; 
     white-space: nowrap;
 }
 .userName{
-    margin-top: 8px;
+    margin-top: 0.5rem;
     font: {
-        size: 16px;
+        size: 1rem;
         weight: 400;
     }
     color: rgb(110, 110, 110);

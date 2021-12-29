@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Users.module.scss';
 import User from './User';
-import useFetch from '../../Hooks/useFetch';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
+import { UserContext } from './UserContext';
 
 const Users = () => {
-  const { isLoading, isError, data } = useFetch('https://jsonplaceholder.typicode.com/users');
+  const { isLoading, isError, data } = useContext(UserContext);
   if (isLoading) {
     return <LoadProgressBar />;
   }
   if (isError) {
-    return <ErrorMessage />;
+    return <ErrorMessage item="Could not load users." />;
   }
   return (
     <div className={classes.users}>

@@ -7,10 +7,10 @@
     text-decoration: none;
     color: white;
     top: 0;
-    padding: 20px;
+    padding: 1.25rem;
     left: 0;
-    width: 200px;
-    height: 60px;
+    width: 12.5rem;
+    height: 3.75rem;
     background-color: black;
     position: absolute;
     &:hover{
@@ -25,10 +25,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 2.5rem;
 
     position: fixed;
-    top: -1000px;
+    top: -62.5rem;
     right: 0;
     left: 0;
     width: 100%;
@@ -42,7 +42,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 2.5rem;
 
     position: fixed;
     top: 0;
@@ -57,28 +57,28 @@
         position: center;
         repeat: no-repeat;
     }
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 .rightPart{
-    font-size: 30px;
+    font-size: 2rem;
     display: flex;
 }
 .leftPart{
     display: flex;
     align-items: center;
-    font-size: 17px;
+    font-size: 1rem;
 }
 .slogan{
-    font-size: 20px;
-    margin: 0 30px;
+    font-size: 1re,;
+    margin: 0 2rem;
 }
 .rightPart > div:not(:first-child){
-    margin-left: 30px;
+    margin-left: 2rem;
 }
 .angleDownBlock{
     display: flex;
-    padding: 20px;
+    padding: 1.25rem;
     height: 100%;
     align-items: center;
     position: relative;
@@ -91,13 +91,13 @@
     }
 }
 .angleDownBlock > div{
-    margin-right: 10px;
+    margin-right: 0.5rem;
 }
 .angleDownBlock > i{
-    font-size: 25px;
+    font-size: 1.5rem;
 } 
 .ellipsisIcon > i:nth-child(2n){
-    margin: 0 2px;
+    margin: 0 0.1rem;
 }
 
 .block{
@@ -105,14 +105,14 @@
     background-color: black;
     position: absolute;
     white-space: nowrap;
-    left: 0px;
-    top: 65px;
+    left: 0;
+    top: 4rem;
     transition: all 0.3s ease;
     display: none;
 }
 .block > div{
     position: relative;
-    padding: 20px 150px 20px 20px;
+    padding: 1.25rem 9rem 1.25rem 1.25rem;
     &:hover{
         background-color: #393939;
     }
