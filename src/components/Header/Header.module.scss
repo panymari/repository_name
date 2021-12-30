@@ -1,119 +1,119 @@
-*{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
-.link > a{
-    text-decoration: none;
-    color: white;
-    top: 0;
-    padding: 1.25rem;
-    left: 0;
-    width: 12.5rem;
-    height: 3.75rem;
-    background-color: black;
-    position: absolute;
-    &:hover{
-        background-color: #393939;
-        cursor: pointer;
-    }
+.link > a {
+  text-decoration: none;
+  color: white;
+  top: 0;
+  padding: 1.25rem;
+  left: 0;
+  width: 12.5rem;
+  height: 3.75rem;
+  background-color: black;
+  position: absolute;
+  &:hover {
+    background-color: #393939;
+    cursor: pointer;
+  }
 }
-.headerHide{
-    background-color: black;
-    color:white;
-    font-weight: 400;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2.5rem;
+.headerHide {
+  background-color: black;
+  color: white;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
 
-    position: fixed;
-    top: -62.5rem;
-    right: 0;
-    left: 0;
-    width: 100%;
-    transition: all 4s ease;
-}
-
-.headerShow{
-    background-color: black;
-    color:white;
-    font-weight: 400;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2.5rem;
-
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;    
-    transition: all 1s ease;
-}
-.logo{
-    background: {
-        image: url("../../assets/logo.png");
-        position: center;
-        repeat: no-repeat;
-    }
-    width: 2.5rem;
-    height: 2.5rem;
-}
-.rightPart{
-    font-size: 2rem;
-    display: flex;
-}
-.leftPart{
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-}
-.slogan{
-    font-size: 1.35rem;
-    margin: 0 2rem;
-}
-.rightPart > div:not(:first-child){
-    margin-left: 2rem;
-}
-.angleDownBlock{
-    display: flex;
-    padding: 1.25rem;
-    height: 100%;
-    align-items: center;
-    position: relative;
-    &:hover{
-        background-color: #393939;
-        cursor: pointer;
-    }
-    &:hover .block{
-        display: block;
-    }
-}
-.angleDownBlock > div{
-    margin-right: 0.5rem;
-}
-.angleDownBlock > i{
-    font-size: 1.5rem;
-} 
-.ellipsisIcon > i:nth-child(2n){
-    margin: 0 0.1rem;
+  position: fixed;
+  top: -62.5rem;
+  right: 0;
+  left: 0;
+  width: 100%;
+  transition: all 4s ease;
 }
 
-.block{
-    text-align: start;
-    background-color: black;
-    position: absolute;
-    white-space: nowrap;
-    left: 0;
-    top: 4rem;
-    transition: all 0.3s ease;
-    display: none;
+.headerShow {
+  background-color: black;
+  color: white;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  transition: all 1s ease;
 }
-.block > div{
-    position: relative;
-    padding: 1.25rem 9rem 1.25rem 1.25rem;
-    &:hover{
-        background-color: #393939;
-    }
+.logo {
+  background: {
+    image: url('../../assets/logo.png');
+    position: center;
+    repeat: no-repeat;
+  }
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.rightPart {
+  font-size: 2rem;
+  display: flex;
+}
+.leftPart {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+.slogan {
+  font-size: 1.35rem;
+  margin: 0 2rem;
+}
+.rightPart > div:not(:first-child) {
+  margin-left: 2rem;
+}
+.angleDownBlock {
+  display: flex;
+  padding: 1.25rem;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  &:hover {
+    background-color: #393939;
+    cursor: pointer;
+  }
+  &:hover .block {
+    display: block;
+  }
+}
+.angleDownBlock > div {
+  margin-right: 0.5rem;
+}
+.angleDownBlock > i {
+  font-size: 1.5rem;
+}
+.ellipsisIcon > i:nth-child(2n) {
+  margin: 0 0.1rem;
+}
+
+.block {
+  text-align: start;
+  background-color: black;
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  top: 4rem;
+  transition: all 0.3s ease;
+  display: none;
+}
+.block > div {
+  position: relative;
+  padding: 1.25rem 9rem 1.25rem 1.25rem;
+  &:hover {
+    background-color: #393939;
+  }
 }

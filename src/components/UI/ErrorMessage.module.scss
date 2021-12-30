@@ -1,15 +1,15 @@
-.error{
-    color: black;
-    font-size: 1.25rem;
-    padding: 1.25rem 3.75rem 1.25rem 1.25rem;
-    background-color: #fbe3e3;
-    width: 25rem;
-    margin: 12.5rem auto 0 auto;
-    border-left: 0.5rem solid red;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.error {
+  color: black;
+  font-size: 1.25rem;
+  padding: 1.25rem 3.75rem 1.25rem 1.25rem;
+  background-color: #fbe3e3;
+  width: 25rem;
+  margin: 12.5rem auto 0 auto;
+  border-left: 0.5rem solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .error > i {
-    color: red;
+  color: red;
 }

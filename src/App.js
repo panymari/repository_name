@@ -17,13 +17,13 @@ const App = () => {
         <Header />
 
         <Suspense fallback="Loading page...">
-          <Redirect to="/" />
-          <Switch>
-            <UserContext.Provider value={values}>
+          <UserContext.Provider value={values}>
+            <Switch>
               <Route component={Users} path="/users" />
               <Route component={UserPage} path="/user/:id" />
-            </UserContext.Provider>
-          </Switch>
+              <Redirect to="/" />
+            </Switch>
+          </UserContext.Provider>
         </Suspense>
       </div>
     </Router>

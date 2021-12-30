@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import axios from 'axios';
 
 const useFetch = (url) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState(null);
-  const getData = () => {
+  const getData = useCallback(() => {
     setIsLoading(true);
     axios
       .get(url)
@@ -19,10 +19,7 @@ const useFetch = (url) => {
         setIsError(true);
         console.error(error);
       });
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+  }, [url]);
   return { isLoading, isError, data, getData };
 };
 export default useFetch;

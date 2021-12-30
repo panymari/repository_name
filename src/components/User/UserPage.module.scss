@@ -1,39 +1,39 @@
-.userPage{
-    width: 35rem;
-    margin: 9.5rem auto 0 auto;
+.userPage {
+  width: 35rem;
+  margin: 9.5rem auto 0 auto;
 }
-.userPhoto{
-    width: 15.5rem;
-    height: 15.5rem;
-    background-color: #cfc6ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.userPhoto {
+  width: 15.5rem;
+  height: 15.5rem;
+  background-color: #cfc6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.userPhoto i{
-    color: whitesmoke;
+.userPhoto i {
+  color: whitesmoke;
 }
-.name{
-    font: {
-        size: 1.5rem;
-        weight: 600;
-    }
+.name {
+  font: {
+    size: 1.5rem;
+    weight: 600;
+  }
 }
-.userName{
-    margin: 1rem 0;
-    font: {
-        size: 1.125rem;
-        weight: 400;
-    }
-    color: rgb(110, 110, 110);
+.userName {
+  margin: 1rem 0;
+  font: {
+    size: 1.125rem;
+    weight: 400;
+  }
+  color: rgb(110, 110, 110);
 }
-.profile{
-    display: flex;
-    justify-content: space-between;
+.profile {
+  display: flex;
+  justify-content: space-between;
 }
-span{
-    font: {
-        size: 1.125rem;
-        weight: 600;
-    }
+span {
+  font: {
+    size: 1.125rem;
+    weight: 600;
+  }
 }
