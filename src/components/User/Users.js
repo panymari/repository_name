@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Users.module.scss';
 import User from './User';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import { UserContext } from './UserContext';
+import useUsers from '../../Hooks/useUsers';
 
 const Users = () => {
-  const { isLoading, isError, data } = useContext(UserContext);
+  const { data, users, isLoading, isError } = useUsers();
   if (isLoading) {
     return <LoadProgressBar />;
   }
@@ -16,7 +16,7 @@ const Users = () => {
   }
   return (
     <div className={classes.users}>
-      {data?.map((item) => (
+      {(data || users)?.map((item) => (
         <Link key={item.id} to={`/user/${item.id}`}>
           <User item={item} />
         </Link>

@@ -5,7 +5,7 @@ const useFetch = (url) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState(null);
-  useEffect(() => {
+  const getData = () => {
     setIsLoading(true);
     axios
       .get(url)
@@ -19,8 +19,10 @@ const useFetch = (url) => {
         setIsError(true);
         console.error(error);
       });
+  };
+  useEffect(() => {
+    getData();
   }, []);
-
-  return { isLoading, isError, data };
+  return { isLoading, isError, data, getData };
 };
 export default useFetch;

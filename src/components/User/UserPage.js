@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import classes from './UserPage.module.scss';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import { UserContext } from './UserContext';
+import useUsers from '../../Hooks/useUsers';
 
 const UserPage = () => {
   const params = useParams();
   const id = Number(params.id);
-  const { isLoading, isError, data } = useContext(UserContext);
+  const { data, users, isLoading, isError } = useUsers();
   if (isLoading) {
     return <LoadProgressBar />;
   }
@@ -17,7 +17,7 @@ const UserPage = () => {
   }
   return (
     <div className={classes.userPage}>
-      {data
+      {(data || users)
         ?.filter((item) => item.id === id)
         .map((item) => (
           <div className={classes.profile}>
