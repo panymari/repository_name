@@ -1,0 +1,68 @@
+.showSearchBar{
+  position: absolute;
+  z-index: -1;
+  padding: 20px;
+  height: 100%;
+  background-color: #393939;
+  width: 500px;
+  top: 0;
+  right: 210px;
+  outline: 0;
+  border: 0;
+  outline:none;
+  color: white;
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+}
+.showSearchBar:focus{
+  border: 1px solid #0062FF;
+  box-shadow: 0 0 .4rem #0062FF;
+}
+.hideSearchBar{
+  display: none;
+}
+.showSearchBarIcon{
+  z-index: 1;
+  cursor: pointer;
+  border: 1px solid transparent;
+  &:hover{
+    border: 1px solid #0062FF;
+    box-shadow: 0 0 .4rem #0062FF;
+  }
+}
+.hideCross{
+  display: none;
+}
+.showCross{
+    z-index: 1;
+    border: 1px solid transparent;
+  &:hover{
+    border: 1px solid #0062FF;
+    box-shadow: 0 0 .4rem #0062FF;
+  }
+}
+.searchBar{
+    display: flex;
+}
+.searchBar > div{
+    padding: 1rem;
+}
+.showSubmitButton{
+    font-size: 2rem;
+    background-color: transparent;
+    border: 0;
+    color: white;
+    padding: 1rem;
+    &:hover{
+        border: 1px solid #0062FF;
+        box-shadow: 0 0 .4rem #0062FF;
+    }
+}
+.hideSubmitButton{
+    display: none;
+}
+.hideSearchBarIcon{
+    display: none;
+}

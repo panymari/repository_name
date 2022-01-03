@@ -9,7 +9,7 @@ const useUsers = () => {
     if (!users) {
       getData();
     }
-  }, [users, getData]);
+  }, [users]);
   useEffect(() => {
     if (data && data.length) {
       setUsers(data);

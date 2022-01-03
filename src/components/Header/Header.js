@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from '../UI/SearchBar';
 import classes from './Header.module.scss';
 
 const Header = () => {
@@ -56,9 +57,7 @@ const Header = () => {
       </div>
 
       <div className={classes.rightPart}>
-        <div>
-          <i className="fa fa-search" />
-        </div>
+        <SearchBar />
         <div>
           <i className="fa fa-question-circle" />
         </div>

@@ -1,7 +1,7 @@
 .users {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  margin-top: 9.5rem;
+  margin-top: 5rem;
   justify-content: center;
   grid-column-gap: 1.6rem;
   grid-row-gap: 1.75rem;
@@ -9,4 +9,7 @@
 a {
   text-decoration: none;
   color: black;
+}
+.errorMessage{
+  margin: 10rem auto 0 auto;
 }

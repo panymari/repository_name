@@ -12,8 +12,9 @@ const Users = () => {
     return <LoadProgressBar />;
   }
   if (isError) {
-    return <ErrorMessage item="Could not load users." />;
+    return <ErrorMessage className={classes.errorMessage} item="Could not load users." />;
   }
+
   return (
     <div className={classes.users}>
       {(data || users)?.map((item) => (

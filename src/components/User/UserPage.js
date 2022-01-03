@@ -13,14 +13,14 @@ const UserPage = () => {
     return <LoadProgressBar />;
   }
   if (isError) {
-    return <ErrorMessage item="Could not load this user." />;
+    return <ErrorMessage className={classes.errorMessage} item="Could not load this user." />;
   }
   return (
     <div className={classes.userPage}>
       {(data || users)
         ?.filter((item) => item.id === id)
         .map((item) => (
-          <div className={classes.profile}>
+          <div className={classes.profile} key={item.id}>
             <div className={classes.userPhoto}>
               <i className="fa fa-user-circle fa-5x" />
             </div>
