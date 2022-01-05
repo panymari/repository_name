@@ -8,7 +8,7 @@ import useUsers from '../../Hooks/useUsers';
 const UserPage = () => {
   const params = useParams();
   const id = Number(params.id);
-  const { data, users, isLoading, isError } = useUsers();
+  const { users = [], isLoading, isError } = useUsers();
   if (isLoading) {
     return <LoadProgressBar />;
   }
@@ -17,7 +17,7 @@ const UserPage = () => {
   }
   return (
     <div className={classes.userPage}>
-      {(data || users)
+      {users
         ?.filter((item) => item.id === id)
         .map((item) => (
           <div className={classes.profile} key={item.id}>

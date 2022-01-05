@@ -14,10 +14,9 @@ const App = () => {
   return (
     <Router>
       <div className={classes.App}>
-        <Header />
-
         <Suspense fallback="Loading page...">
           <UserContext.Provider value={values}>
+            <Header />
             <Switch>
               <Route component={Users} path="/users" />
               <Route component={UserPage} path="/user/:id" />

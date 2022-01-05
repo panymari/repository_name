@@ -15,7 +15,7 @@ const useUsers = () => {
       setUsers(data);
     }
   }, [data, setUsers]);
-  return { data, users, isLoading, isError };
+  return { users: users || data, isLoading, isError };
 };
 
 export default useUsers;

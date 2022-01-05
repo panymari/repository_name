@@ -7,7 +7,7 @@ import ErrorMessage from '../UI/ErrorMessage';
 import useUsers from '../../Hooks/useUsers';
 
 const Users = () => {
-  const { data, users, isLoading, isError } = useUsers();
+  const { users = [], isLoading, isError } = useUsers();
   if (isLoading) {
     return <LoadProgressBar />;
   }
@@ -17,7 +17,7 @@ const Users = () => {
 
   return (
     <div className={classes.users}>
-      {(data || users)?.map((item) => (
+      {users?.map((item) => (
         <Link key={item.id} to={`/user/${item.id}`}>
           <User item={item} />
         </Link>

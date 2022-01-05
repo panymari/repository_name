@@ -2,11 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../UI/SearchBar';
 import classes from './Header.module.scss';
+import useUsers from '../../Hooks/useUsers';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
 
   const headerRef = useRef();
+  const { users = [] } = useUsers();
 
   const changeVisibilityHeader = () => {
     if (window.scrollY >= headerRef.current.clientHeight) {
