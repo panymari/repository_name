@@ -66,3 +66,40 @@
 .hideSearchBarIcon{
     display: none;
 }
+.hintHide{
+  display: none;
+}
+.hint{
+  position: absolute;
+  right: 12.2rem;
+  top: 3.5rem;
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+}
+.hintShow{
+  background-color: black;
+}
+.hintItem{
+  padding: 0.5rem 9.3rem 0.5rem 0.5rem;
+  width: 31.2rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #393939;
+  }
+}
+.nothing{
+  position: absolute;
+  color: red;
+  right: 1rem;
+  top: 1rem;
+  width: 31.2rem;
+  padding: 0.5rem 9.3rem 0.5rem 0.5rem;
+  background-color: black;
+}
+a{
+  display: block;
+  text-decoration: none;
+  color: white;
+}

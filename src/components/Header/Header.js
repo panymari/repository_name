@@ -6,9 +6,22 @@ import useUsers from '../../Hooks/useUsers';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
-
   const headerRef = useRef();
   const { users = [] } = useUsers();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredUsers, setFilteredUsers] = useState([]);
+
+  useEffect(() => {
+    if (searchQuery) {
+      const usersFiltered = users.filter((item) => {
+        const userName = item.name.toLowerCase();
+        return userName.includes(searchQuery.trim().toLowerCase());
+      });
+      setFilteredUsers(usersFiltered);
+    } else {
+      setFilteredUsers(users);
+    }
+  }, [searchQuery, users]);
 
   const changeVisibilityHeader = () => {
     if (window.scrollY >= headerRef.current.clientHeight) {
@@ -59,7 +72,7 @@ const Header = () => {
       </div>
 
       <div className={classes.rightPart}>
-        <SearchBar />
+        <SearchBar filteredUsers={filteredUsers} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         <div>
           <i className="fa fa-question-circle" />
         </div>
