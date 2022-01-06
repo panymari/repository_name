@@ -10,7 +10,6 @@ const Header = () => {
   const { users = [] } = useUsers();
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredUsers, setFilteredUsers] = useState([]);
-
   useEffect(() => {
     if (searchQuery) {
       const usersFiltered = users.filter((item) => {
@@ -73,16 +72,42 @@ const Header = () => {
 
       <div className={classes.rightPart}>
         <SearchBar filteredUsers={filteredUsers} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-        <div>
+        <button className={classes.questionIcon}>
           <i className="fa fa-question-circle" />
-        </div>
-        <div>
+        </button>
+        <button className={classes.userIcon}>
           <i aria-hidden="true" className="fa fa-user" />
-        </div>
-        <div className={classes.ellipsisIcon}>
-          <i className="fa fa-ellipsis-v" />
-          <i className="fa fa-ellipsis-v" />
-          <i className="fa fa-ellipsis-v" />
+        </button>
+        <div className={classes.additions}>
+          <button className={classes.ellipsisIcon}>
+            <i className="fa fa-ellipsis-v" />
+            <i className="fa fa-ellipsis-v" />
+            <i className="fa fa-ellipsis-v" />
+          </button>
+          <div className={classes.angleDownBlock__mobile}>
+            <div>
+              <div>Recommendations</div>
+              <div className={classes.block__mobile}>
+                <div>block 1</div>
+                <div>block 2</div>
+                <div>block 3</div>
+              </div>
+            </div>
+            <div>
+              <div>Learning</div>
+              <div className={classes.block__mobile}>
+                <div>block 1</div>
+                <div>block 2</div>
+                <div>block 3</div>
+              </div>
+            </div>
+            <div>
+              <div>Team</div>
+              <div className={classes.block__mobile}>
+                <Link to="/users">Users</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

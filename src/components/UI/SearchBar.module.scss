@@ -6,7 +6,7 @@
   background-color: #393939;
   width: 500px;
   top: 0;
-  right: 210px;
+  right: 10rem;
   outline: 0;
   border: 0;
   outline:none;
@@ -14,6 +14,10 @@
   font: {
     size: 16px;
     weight: 400;
+  }
+  @media screen  and (min-device-width: 320px) 
+  and (max-device-width: 1200px){
+    right: 9rem;
   }
 }
 .showSearchBar:focus{
@@ -38,6 +42,8 @@
 .showCross{
     z-index: 1;
     border: 1px solid transparent;
+    position: relative;
+    background-color: #393939;
   &:hover{
     border: 1px solid #0062FF;
     box-shadow: 0 0 .4rem #0062FF;
@@ -71,6 +77,7 @@
 }
 .hint{
   position: absolute;
+  color: white;
   right: 12.2rem;
   top: 3.5rem;
   font: {
@@ -102,4 +109,10 @@ a{
   display: block;
   text-decoration: none;
   color: white;
+}
+button{
+  background-color: transparent;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
 }

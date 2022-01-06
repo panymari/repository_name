@@ -3,6 +3,17 @@
   -moz-user-select: none;
   -ms-user-select: none;
 }
+.block__mobile > a{
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 1.25rem 9rem 1.25rem 1.25rem;
+  &:hover {
+    background-color: #393939;
+    cursor: pointer;
+  }
+}
+
 .link > a {
   text-decoration: none;
   color: white;
@@ -90,6 +101,10 @@
   &:hover .block {
     display: block;
   }
+  @media screen  and (min-device-width: 320px) 
+  and (max-device-width: 1200px){
+      display: none;
+  }
 }
 .angleDownBlock > div {
   margin-right: 0.5rem;
@@ -100,7 +115,6 @@
 .ellipsisIcon > i:nth-child(2n) {
   margin: 0 0.1rem;
 }
-
 .block {
   text-align: start;
   background-color: black;
@@ -118,7 +132,76 @@
     background-color: #393939;
   }
 }
-
-.rightPart > div:not(:first-child) {
-  padding: 1rem;
+button{
+  border: 1px solid transparent;
+  cursor: pointer;
+  &:hover{
+    border: 1px solid #0062FF;
+    box-shadow: 0 0 .4rem #0062FF;
+  }
+}
+.angleDownBlock__mobile > div{
+  text-align: start;
+  background-color: black;
+  white-space: nowrap;
+  padding: 1.25rem 9rem 1.25rem 1.25rem;
+  font: {
+    size: 1rem;
+    weight: 400;
+  }
+  &:hover {
+    background-color: #393939;
+    cursor: pointer;
+  }
+}
+.angleDownBlock__mobile{
+  position: absolute;
+  right: 0;
+  top: 4.45rem;
+  transition: all 0.3s ease;
+  display: none;
+}
+.additions{
+  &:hover .angleDownBlock__mobile{
+    display: block;
+  }
+}
+.block__mobile{
+  position: absolute;
+  right: 18.5rem;
+  top: 0rem;
+  transition: all 0.3s ease;
+  display: none;
+}
+.block__mobile > div{
+  text-align: start;
+  background-color: black;
+  white-space: nowrap;
+  padding: 1.25rem 9rem 1.25rem 1.25rem;
+  font: {
+    size: 1rem;
+    weight: 400;
+  }
+  &:hover {
+    background-color: #393939;
+    cursor: pointer;
+  }
+}
+.angleDownBlock__mobile > div{
+  position: relative;
+  &:hover .block__mobile{
+    display: block;
+  }
+}
+.ellipsisIcon{
+  @media screen  and (min-device-width: 1200px) 
+  and (max-device-width: 30000px){
+      display: none;
+  }
+}
+.questionIcon, .userIcon{
+  @media screen  and (min-device-width: 320px) 
+  and (max-device-width: 1200px){
+      display: none;
+  }
 }

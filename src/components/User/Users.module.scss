@@ -1,6 +1,6 @@
 .users {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 5rem;
   justify-content: center;
   grid-column-gap: 1.6rem;
