@@ -3,7 +3,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
 }
-.block__mobile > a{
+.block__mobile > a {
   text-decoration: none;
   color: white;
   background-color: black;
@@ -101,9 +101,8 @@
   &:hover .block {
     display: block;
   }
-  @media screen  and (min-device-width: 320px) 
-  and (max-device-width: 1200px){
-      display: none;
+  @media screen and (min-device-width: 320px) and (max-device-width: 1200px) {
+    display: none;
   }
 }
 .angleDownBlock > div {
@@ -132,15 +131,15 @@
     background-color: #393939;
   }
 }
-button{
+button {
   border: 1px solid transparent;
   cursor: pointer;
-  &:hover{
-    border: 1px solid #0062FF;
-    box-shadow: 0 0 .4rem #0062FF;
+  &:hover {
+    border: 1px solid #0062ff;
+    box-shadow: 0 0 0.4rem #0062ff;
   }
 }
-.angleDownBlock__mobile > div{
+.angleDownBlock__mobile > div {
   text-align: start;
   background-color: black;
   white-space: nowrap;
@@ -154,26 +153,26 @@ button{
     cursor: pointer;
   }
 }
-.angleDownBlock__mobile{
+.angleDownBlock__mobile {
   position: absolute;
   right: 0;
   top: 4.45rem;
   transition: all 0.3s ease;
   display: none;
 }
-.additions{
-  &:hover .angleDownBlock__mobile{
+.additions {
+  &:hover .angleDownBlock__mobile {
     display: block;
   }
 }
-.block__mobile{
+.block__mobile {
   position: absolute;
   right: 18.5rem;
   top: 0rem;
   transition: all 0.3s ease;
   display: none;
 }
-.block__mobile > div{
+.block__mobile > div {
   text-align: start;
   background-color: black;
   white-space: nowrap;
@@ -187,21 +186,20 @@ button{
     cursor: pointer;
   }
 }
-.angleDownBlock__mobile > div{
+.angleDownBlock__mobile > div {
   position: relative;
-  &:hover .block__mobile{
+  &:hover .block__mobile {
     display: block;
   }
 }
-.ellipsisIcon{
-  @media screen  and (min-device-width: 1200px) 
-  and (max-device-width: 30000px){
-      display: none;
+.ellipsisIcon {
+  @media screen and (min-device-width: 1200px) and (max-device-width: 30000px) {
+    display: none;
   }
 }
-.questionIcon, .userIcon{
-  @media screen  and (min-device-width: 320px) 
-  and (max-device-width: 1200px){
-      display: none;
+.questionIcon,
+.userIcon {
+  @media screen and (min-device-width: 320px) and (max-device-width: 1200px) {
+    display: none;
   }
 }

@@ -1,4 +1,4 @@
-.showSearchBar{
+.showSearchBar {
   position: absolute;
   z-index: -1;
   padding: 20px;
@@ -9,73 +9,72 @@
   right: 10rem;
   outline: 0;
   border: 0;
-  outline:none;
+  outline: none;
   color: white;
   font: {
     size: 16px;
     weight: 400;
   }
-  @media screen  and (min-device-width: 320px) 
-  and (max-device-width: 1200px){
+  @media screen and (min-device-width: 320px) and (max-device-width: 1200px) {
     right: 9rem;
   }
 }
-.showSearchBar:focus{
-  border: 1px solid #0062FF;
-  box-shadow: 0 0 .4rem #0062FF;
+.showSearchBar:focus {
+  border: 1px solid #0062ff;
+  box-shadow: 0 0 0.4rem #0062ff;
 }
-.hideSearchBar{
+.hideSearchBar {
   display: none;
 }
-.showSearchBarIcon{
+.showSearchBarIcon {
   z-index: 1;
   cursor: pointer;
   border: 1px solid transparent;
-  &:hover{
-    border: 1px solid #0062FF;
-    box-shadow: 0 0 .4rem #0062FF;
+  &:hover {
+    border: 1px solid #0062ff;
+    box-shadow: 0 0 0.4rem #0062ff;
   }
 }
-.hideCross{
+.hideCross {
   display: none;
 }
-.showCross{
-    z-index: 1;
-    border: 1px solid transparent;
-    position: relative;
-    background-color: #393939;
-  &:hover{
-    border: 1px solid #0062FF;
-    box-shadow: 0 0 .4rem #0062FF;
+.showCross {
+  z-index: 1;
+  border: 1px solid transparent;
+  position: relative;
+  background-color: #393939;
+  &:hover {
+    border: 1px solid #0062ff;
+    box-shadow: 0 0 0.4rem #0062ff;
   }
 }
-.searchBar{
-    display: flex;
+.searchBar {
+  display: flex;
 }
-.searchBar > div{
-    padding: 1rem;
+.searchBar > div {
+  padding: 1rem;
 }
-.showSubmitButton{
-    font-size: 2rem;
-    background-color: transparent;
-    border: 0;
-    color: white;
-    padding: 1rem;
-    &:hover{
-        border: 1px solid #0062FF;
-        box-shadow: 0 0 .4rem #0062FF;
-    }
+.showSubmitButton {
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  padding: 1rem;
+  &:hover {
+    border: 1px solid #0062ff;
+    box-shadow: 0 0 0.4rem #0062ff;
+  }
 }
-.hideSubmitButton{
-    display: none;
-}
-.hideSearchBarIcon{
-    display: none;
-}
-.hintHide{
+.hideSubmitButton {
   display: none;
 }
-.hint{
+.hideSearchBarIcon {
+  display: none;
+}
+.hintHide {
+  display: none;
+}
+.hint {
   position: absolute;
   color: white;
   right: 12.2rem;
@@ -85,10 +84,10 @@
     weight: 400;
   }
 }
-.hintShow{
+.hintShow {
   background-color: black;
 }
-.hintItem{
+.hintItem {
   padding: 0.5rem 9.3rem 0.5rem 0.5rem;
   width: 31.2rem;
   cursor: pointer;
@@ -96,7 +95,7 @@
     background-color: #393939;
   }
 }
-.nothing{
+.nothing {
   position: absolute;
   color: red;
   right: 1rem;
@@ -105,12 +104,12 @@
   padding: 0.5rem 9.3rem 0.5rem 0.5rem;
   background-color: black;
 }
-a{
+a {
   display: block;
   text-decoration: none;
   color: white;
 }
-button{
+button {
   background-color: transparent;
   color: white;
   font-size: 2rem;
