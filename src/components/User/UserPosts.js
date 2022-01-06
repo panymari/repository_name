@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { memo, useEffect } from 'react';
 // import { useParams } from 'react-router-dom';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
 import usePosts from '../../Hooks/usePosts';
 
-const UserPosts = () => {
+const UserPosts = memo(({ userId }) => {
+  console.log('render');
   //   const params = useParams();
   //   const id = Number(params.id);
   const { posts = [], isLoading, isError } = usePosts();
+  // const { posts = [], isLoading, isError } = {};
+
   if (isLoading) {
     return <LoadProgressBar />;
   }
@@ -26,9 +29,7 @@ const UserPosts = () => {
     }, {});
   };
 
-  const groupedPosts = groupById(posts, 'userId');
-
-  console.log(groupedPosts);
+  // const groupedPosts = groupById(posts, 'userId');
 
   return (
     <div>
@@ -37,6 +38,6 @@ const UserPosts = () => {
       ))}
     </div>
   );
-};
+});
 
 export default UserPosts;

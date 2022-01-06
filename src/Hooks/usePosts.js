@@ -2,7 +2,7 @@ import { useEffect, useContext } from 'react';
 import useFetch from './useFetch';
 import { UserPostContext } from '../components/User/UserPostContext';
 
-const useUsers = () => {
+const usePosts = () => {
   const { userPosts, setUserPosts } = useContext(UserPostContext);
   const { isLoading, isError, data, getData } = useFetch('https://jsonplaceholder.typicode.com/posts');
   useEffect(() => {
@@ -18,4 +18,4 @@ const useUsers = () => {
   return { posts: userPosts || data, isLoading, isError };
 };
 
-export default useUsers;
+export default usePosts;
