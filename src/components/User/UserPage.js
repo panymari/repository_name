@@ -6,6 +6,7 @@ import ErrorMessage from '../UI/ErrorMessage';
 import useUsers from '../../Hooks/useUsers';
 import UserPosts from './UserPosts';
 import { useIsMounted } from '../../Hooks/useIsMounted';
+import AddUser from '../UI/AddUser';
 
 const UserPage = () => {
   const params = useParams();
@@ -19,6 +20,7 @@ const UserPage = () => {
   if (isError) {
     return <ErrorMessage className={classes.errorMessage} item="Could not load this user." />;
   }
+
   return isMounted ? (
     <div>
       <div className={classes.userPage}>
@@ -44,7 +46,8 @@ const UserPage = () => {
             </div>
           ))}
       </div>
-      <UserPosts />
+      <AddUser className={classes.addUser} userIdValue={id} />
+      <UserPosts className={classes.userPosts} userId={id} />
     </div>
   ) : null;
 };

@@ -1,15 +1,12 @@
-import React, { memo, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
+import React, { memo } from 'react';
+import cn from 'classnames';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
 import usePosts from '../../Hooks/usePosts';
+import classes from './UserPosts.module.scss';
 
-const UserPosts = memo(({ userId }) => {
-  console.log('render');
-  //   const params = useParams();
-  //   const id = Number(params.id);
+const UserPosts = memo(({ userId, className }) => {
   const { posts = [], isLoading, isError } = usePosts();
-  // const { posts = [], isLoading, isError } = {};
 
   if (isLoading) {
     return <LoadProgressBar />;
@@ -18,24 +15,20 @@ const UserPosts = memo(({ userId }) => {
     return <ErrorMessage item="Could not load this user." />;
   }
 
-  const groupById = (objectArray, property) => {
-    return objectArray?.reduce((total, obj) => {
-      const key = obj[property];
-      if (!total[key]) {
-        total[key] = [];
-      }
-      total[key].push(obj);
-      return total;
-    }, {});
+  const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
-  // const groupedPosts = groupById(posts, 'userId');
-
   return (
-    <div>
-      {posts?.map((item) => (
-        <div key={item.id}>{item.userId}</div>
-      ))}
+    <div className={cn(classes.userPosts, className)}>
+      {posts
+        ?.filter((item) => item.userId === userId)
+        .map((item) => (
+          <div key={item.id}>
+            <div className={classes.postTitle}>{capitalizeFirstLetter(item.title)}</div>
+            <div className={classes.postBody}>{capitalizeFirstLetter(item.body)}</div>
+          </div>
+        ))}
     </div>
   );
 });

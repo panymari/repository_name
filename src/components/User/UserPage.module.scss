@@ -1,6 +1,6 @@
 .userPage {
   width: 35rem;
-  margin: 9.5rem auto 0 auto;
+  margin: 4rem auto 0 auto;
 }
 .userPhoto {
   width: 15.5rem;
@@ -40,4 +40,11 @@ span {
 
 .errorMessage {
   margin: 10rem auto 0 auto;
+}
+.addUser, .userPosts{
+  margin: 0 auto;
+}
+.addUser{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
