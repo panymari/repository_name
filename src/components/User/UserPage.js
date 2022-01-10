@@ -5,14 +5,12 @@ import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
 import useUsers from '../../Hooks/useUsers';
 import UserPosts from './UserPosts';
-// import { useIsMounted } from '../../Hooks/useIsMounted';
 import AddUser from '../UI/AddUser';
 
 const UserPage = () => {
   const params = useParams();
   const id = Number(params.id);
   const { users = [], isLoading, isError } = useUsers();
-  // const isMounted = useIsMounted();
 
   if (users?.length) {
     return (

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import cn from 'classnames';
 import axios from 'axios';
 import classes from './AddUser.module.scss';
+import { UserPostContext } from '../User/UserPostContext';
 
 const AddUser = ({ userIdValue, className }) => {
   const [inputs, setInputs] = useState({});
+  const { userPosts, setUserPosts } = useContext(UserPostContext);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -23,7 +25,9 @@ const AddUser = ({ userIdValue, className }) => {
       body: userBody,
     };
     axios.post('https://jsonplaceholder.typicode.com/posts', post).then((response) => {
-      console.log(response);
+      userPosts.push(response.data);
+      setUserPosts(userPosts);
+      console.log(userPosts);
     });
   };
   return (
