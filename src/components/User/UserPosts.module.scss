@@ -1,25 +1,25 @@
-.userPosts > div{
-    border: 2px solid #cfc6ff;
-    padding: 20px;
-    border-radius: 0.75rem;
+.userPosts > div {
+  border: 2px solid #cfc6ff;
+  padding: 20px;
+  border-radius: 0.75rem;
 }
-.userPosts > div:not(:first-child){
-    margin-top: 1rem;
+.userPosts > div:not(:first-child) {
+  margin-top: 1rem;
 }
-.userPosts{
-    width: 60rem;
+.userPosts {
+  width: 60rem;
 }
-.postTitle{
-    margin-bottom: 0.5rem;
-    font: {
-        size: 20px;
-        weight: 600;
-    }
+.postTitle {
+  margin-bottom: 0.5rem;
+  font: {
+    size: 20px;
+    weight: 600;
+  }
 }
-.postBody{
-    color: rgb(110, 110, 110);
-    font: {
-        size: 16px;
-        weight: 400;
-    }
+.postBody {
+  color: rgb(110, 110, 110);
+  font: {
+    size: 16px;
+    weight: 400;
+  }
 }
