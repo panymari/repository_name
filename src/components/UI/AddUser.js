@@ -25,9 +25,10 @@ const AddUser = ({ userIdValue, className }) => {
       body: userBody,
     };
     axios.post('https://jsonplaceholder.typicode.com/posts', post).then((response) => {
-      userPosts.push(response.data);
-      setUserPosts(userPosts);
-      console.log(userPosts);
+      const userPostsCopy = JSON.parse(JSON.stringify(userPosts));
+      userPostsCopy.push(response.data);
+      setUserPosts(userPostsCopy);
+      console.log(userPostsCopy);
     });
   };
   return (
