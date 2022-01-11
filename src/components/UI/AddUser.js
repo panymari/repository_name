@@ -31,9 +31,22 @@ const AddUser = ({ userIdValue, className }) => {
   };
   return (
     <form className={cn(classes.userForm, className)} onSubmit={handleSubmit}>
-      <input name="title" onChange={handleChange} placeholder="Enter the title" type="text" value={inputs.title || ''} />
-      <textarea name="body" onChange={handleChange} placeholder="Enter the body" value={inputs.body || ''} />
-      <input type="submit" value="Add post" />
+      <input
+        className={classes.userInput}
+        name="title"
+        onChange={handleChange}
+        placeholder="Enter the title"
+        type="text"
+        value={inputs.title || ''}
+      />
+      <textarea
+        className={classes.userTeaxtarea}
+        name="body"
+        onChange={handleChange}
+        placeholder="Enter the body"
+        value={inputs.body || ''}
+      />
+      <input className={classes.userSubmitButton} type="submit" value="Add post" />
     </form>
   );
 };
