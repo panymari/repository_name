@@ -9,18 +9,6 @@ import useUsers from '../../Hooks/useUsers';
 const Users = () => {
   const { users = [], isLoading, isError } = useUsers();
 
-  if (users?.length) {
-    return (
-      <div className={classes.users}>
-        {users?.map((item) => (
-          <Link key={item.id} to={`/user/${item.id}`}>
-            <User item={item} />
-          </Link>
-        ))}
-      </div>
-    );
-  }
-
   if (isLoading) {
     return <LoadProgressBar />;
   }
@@ -28,7 +16,15 @@ const Users = () => {
     return <ErrorMessage className={classes.errorMessage} item="Could not load users." />;
   }
 
-  return null;
+  return (
+    <div className={classes.users}>
+      {users?.map((item) => (
+        <Link key={item.id} to={`/user/${item.id}`}>
+          <User item={item} />
+        </Link>
+      ))}
+    </div>
+  );
 };
 
 export default Users;
