@@ -11,7 +11,12 @@ const UserPage = lazy(() => import('./components/User/UserPage'));
 
 const App = () => {
   const [users, setUsers] = useState(null);
-  const values = useMemo(() => ({ users, setUsers }), [users, setUsers]);
+  const [isUsersLoading, setIsUsersLoading] = useState(false);
+  const [isUsersError, setIsUsersError] = useState(false);
+  const values = useMemo(
+    () => ({ users, setUsers, isUsersLoading, setIsUsersLoading, isUsersError, setIsUsersError }),
+    [users, setUsers, isUsersLoading, setIsUsersLoading, isUsersError, setIsUsersError]
+  );
 
   const [userPosts, setUserPosts] = useState(null);
   const valuesPost = useMemo(() => ({ userPosts, setUserPosts }), [userPosts, setUserPosts]);
