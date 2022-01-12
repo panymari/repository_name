@@ -6,7 +6,7 @@ import { UserPostContext } from '../User/UserPostContext';
 
 const AddUser = ({ userIdValue, className }) => {
   const [inputs, setInputs] = useState({});
-  const { userPosts, setUserPosts } = useContext(UserPostContext);
+  const { posts, setPosts } = useContext(UserPostContext);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -25,8 +25,8 @@ const AddUser = ({ userIdValue, className }) => {
       body: userBody,
     };
     axios.post('https://jsonplaceholder.typicode.com/posts', post).then((response) => {
-      const userPostsCopy = [response.data, ...userPosts];
-      setUserPosts(userPostsCopy);
+      const userPostsCopy = [response.data, ...posts];
+      setPosts(userPostsCopy);
     });
   };
   return (
