@@ -3,19 +3,35 @@ import useFetch from './useFetch';
 import { UserPostContext } from '../components/User/UserPostContext';
 
 const usePosts = () => {
-  const { userPosts, setUserPosts } = useContext(UserPostContext);
+  const { posts, setPosts, isPostsLoading, setIsPostsLoading, isPostsError, setIsPostsError } = useContext(UserPostContext);
   const { isLoading, isError, data, getData } = useFetch('https://jsonplaceholder.typicode.com/posts');
+
   useEffect(() => {
-    if (!userPosts) {
+    setIsPostsLoading(isLoading);
+    setIsPostsError(isError);
+  }, [isLoading, isError]);
+
+  useEffect(() => {
+    if (!posts && !isPostsLoading) {
       getData();
     }
-  }, [userPosts]);
+  }, [posts]);
+
   useEffect(() => {
     if (data && data.length) {
-      setUserPosts(data);
+      setPosts(data);
     }
-  }, [data, setUserPosts]);
-  return { posts: userPosts || data, isLoading, isError };
+  }, [data, setPosts]);
+
+  if (isPostsLoading && !posts) {
+    return { posts: null, isLoading: true, isError: false };
+  }
+
+  if (posts) {
+    return { posts, isLoading: false, isError: false };
+  }
+
+  return { posts: posts || data, isLoading: isPostsLoading, isError: isPostsError };
 };
 
 export default usePosts;

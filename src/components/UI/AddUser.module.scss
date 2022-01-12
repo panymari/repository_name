@@ -8,7 +8,7 @@
   align-items: center;
   grid-row-gap: 1rem;
 }
-.userInput{
+.userInput {
   background-color: #393939;
   color: white;
   font: {
@@ -50,7 +50,8 @@
   }
 }
 .userInput,
-.userTeaxtarea, .userSubmitButton {
+.userTeaxtarea,
+.userSubmitButton {
   width: 40rem;
   padding: 0.5rem;
   border-radius: 0.75rem;

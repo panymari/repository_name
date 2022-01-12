@@ -8,27 +8,34 @@ import { UserPostContext } from './components/User/UserPostContext';
 
 const Users = lazy(() => import('./components/User/Users'));
 const UserPage = lazy(() => import('./components/User/UserPage'));
+const UserAuthorization = lazy(() => import('./components/User/UserAuthorization'));
 
 const App = () => {
   const [users, setUsers] = useState(null);
   const [isUsersLoading, setIsUsersLoading] = useState(false);
   const [isUsersError, setIsUsersError] = useState(false);
-  const values = useMemo(
+  const valuesUsers = useMemo(
     () => ({ users, setUsers, isUsersLoading, setIsUsersLoading, isUsersError, setIsUsersError }),
     [users, setUsers, isUsersLoading, setIsUsersLoading, isUsersError, setIsUsersError]
   );
 
-  const [userPosts, setUserPosts] = useState(null);
-  const valuesPost = useMemo(() => ({ userPosts, setUserPosts }), [userPosts, setUserPosts]);
+  const [posts, setPosts] = useState(null);
+  const [isPostsLoading, setIsPostsLoading] = useState(false);
+  const [isPostsError, setIsPostsError] = useState(false);
+  const valuesPosts = useMemo(
+    () => ({ posts, setPosts, isPostsLoading, setIsPostsLoading, isPostsError, setIsPostsError }),
+    [posts, setPosts, isPostsLoading, setIsPostsLoading, isPostsError, setIsPostsError]
+  );
   return (
     <Router>
       <div className={classes.App}>
         <Suspense fallback="Loading page...">
-          <UserContext.Provider value={values}>
+          <UserContext.Provider value={valuesUsers}>
             <Header />
             <Switch>
               <Route component={Users} path="/users" />
-              <UserPostContext.Provider value={valuesPost}>
+              <Route component={UserAuthorization} path="/authorization" />
+              <UserPostContext.Provider value={valuesPosts}>
                 <Route component={UserPage} path="/user/:id" />
               </UserPostContext.Provider>
               <Redirect to="/" />

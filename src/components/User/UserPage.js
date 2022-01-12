@@ -12,38 +12,6 @@ const UserPage = () => {
   const id = Number(params.id);
   const { users = [], isLoading, isError } = useUsers();
 
-  if (users?.length) {
-    return (
-      <div>
-        <div className={classes.userPage}>
-          {users
-            ?.filter((item) => item.id === id)
-            .map((item) => (
-              <div className={classes.profile} key={item.id}>
-                <div className={classes.userPhoto}>
-                  <i className="fa fa-user-circle fa-5x" />
-                </div>
-                <div>
-                  <div className={classes.name}>{item.name}</div>
-                  <div className={classes.userName}>@{item.username}</div>
-                  <div>
-                    <span>Phone: </span>
-                    {item.phone}
-                  </div>
-                  <div>
-                    <span>Email: </span>
-                    {item.email}
-                  </div>
-                </div>
-              </div>
-            ))}
-        </div>
-        <AddUser className={classes.addUser} userIdValue={id} />
-        <UserPosts className={classes.userPosts} userId={id} />
-      </div>
-    );
-  }
-
   if (isLoading) {
     return <LoadProgressBar />;
   }
@@ -51,7 +19,35 @@ const UserPage = () => {
     return <ErrorMessage className={classes.errorMessage} item="Could not load this user." />;
   }
 
-  return null;
+  return (
+    <div>
+      <div className={classes.userPage}>
+        {users
+          ?.filter((item) => item.id === id)
+          .map((item) => (
+            <div className={classes.profile} key={item.id}>
+              <div className={classes.userPhoto}>
+                <i className="fa fa-user-circle fa-5x" />
+              </div>
+              <div>
+                <div className={classes.name}>{item.name}</div>
+                <div className={classes.userName}>@{item.username}</div>
+                <div>
+                  <span>Phone: </span>
+                  {item.phone}
+                </div>
+                <div>
+                  <span>Email: </span>
+                  {item.email}
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
+      <AddUser className={classes.addUser} userIdValue={id} />
+      <UserPosts className={classes.userPosts} userId={id} />
+    </div>
+  );
 };
 
 export default UserPage;
