@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import classes from './UserPage.module.scss';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import useUsers from '../../Hooks/useUsers';
+import useUsers from '../../hooks/useUsers';
 import UserPosts from './UserPosts';
 import AddUser from '../UI/AddUser';
 

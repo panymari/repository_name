@@ -4,7 +4,7 @@ import classes from './Users.module.scss';
 import User from './User';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import useUsers from '../../Hooks/useUsers';
+import useUsers from '../../hooks/useUsers';
 
 const Users = () => {
   const { users = [], isLoading, isError } = useUsers();

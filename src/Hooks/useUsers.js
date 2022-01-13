@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react';
 import useFetch from './useFetch';
-import { UserContext } from '../components/User/UserContext';
+import { UserContext } from '../context/UserContext';
 
 const useUsers = () => {
   const { users, setUsers, isUsersLoading, setIsUsersLoading, isUsersError, setIsUsersError } = useContext(UserContext);

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SearchBar from '../UI/SearchBar';
 import classes from './Header.module.scss';
-import useUsers from '../../Hooks/useUsers';
+import useUsers from '../../hooks/useUsers';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);

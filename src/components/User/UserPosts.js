@@ -1,19 +1,15 @@
 import React, { memo } from 'react';
 import cn from 'classnames';
-import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import usePosts from '../../Hooks/usePosts';
+import usePosts from '../../hooks/usePosts';
 import classes from './UserPosts.module.scss';
 import CapitalizeFirstLetter from '../../utils/CapitalizeFirstLetter';
 
 const UserPosts = memo(({ userId, className }) => {
-  const { posts = [], isLoading, isError } = usePosts();
+  const { posts = [], isError } = usePosts();
 
-  if (isLoading) {
-    return <LoadProgressBar />;
-  }
   if (isError) {
-    return <ErrorMessage item="Could not load this user." />;
+    return <ErrorMessage item="Could not load posts." />;
   }
 
   return (

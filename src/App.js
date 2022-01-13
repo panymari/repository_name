@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 import Header from './components/Header/Header';
 import classes from './App.module.scss';
-import { UserContext } from './components/User/UserContext';
-import { UserPostContext } from './components/User/UserPostContext';
+import { UserContext } from './context/UserContext';
+import { UserPostContext } from './context/UserPostContext';
 
 const Users = lazy(() => import('./components/User/Users'));
 const UserPage = lazy(() => import('./components/User/UserPage'));

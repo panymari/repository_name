@@ -16,6 +16,15 @@ const UserAuthorization = () => {
       </div>
       <input className={classes.inputPassword} name="password" placeholder="Password" type="password" />
 
+      <div lassName={classes.social}>
+        <div className={classes.google}>
+          <i className="fa fa-google fa-2x" /> Google
+        </div>
+        <div className={classes.facebook}>
+          <i className="fa fa-facebook fa-2x" /> Facebook
+        </div>
+      </div>
+
       <input className={classes.logInButton} type="submit" value="Log In" />
     </form>
   );

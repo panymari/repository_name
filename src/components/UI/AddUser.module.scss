@@ -20,6 +20,18 @@
     box-shadow: 0 0 0.4rem #0062ff;
   }
 }
+.userInputError {
+  background-color: #393939;
+  color: white;
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+  &:optional {
+  border: 1px solid rgb(184, 22, 22);
+  box-shadow: 0 0 0.4rem rgb(184, 22, 22);
+  }
+}
 .userTeaxtarea {
   background-color: #393939;
   color: white;
@@ -34,6 +46,20 @@
     box-shadow: 0 0 0.4rem #0062ff;
   }
 }
+.userTeaxtareaError {
+  background-color: #393939;
+  color: white;
+  resize: none;
+  height: 5rem;
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+  &:optional {
+    border: 1px solid rgb(184, 22, 22);
+    box-shadow: 0 0 0.4rem rgb(184, 22, 22);
+  }
+}
 .userSubmitButton {
   background-color: rgb(239, 239, 239);
   color: black;
@@ -46,15 +72,27 @@
     box-shadow: 0 0 0.4rem #0062ff;
   }
   &:disabled {
-    opacity: 0.8;
+    opacity: 0.5;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0.4rem transparent;
+    cursor: not-allowed;
   }
 }
 .userInput,
+.userInputError,
 .userTeaxtarea,
+.userTeaxtareaError,
 .userSubmitButton {
   width: 40rem;
   padding: 0.5rem;
   border-radius: 0.75rem;
   outline: 0;
   border: 0;
+}
+.inputError{
+  color: rgb(184, 22, 22);
+  font: {
+    size: 18px;
+    weight: 400;
+  }
 }

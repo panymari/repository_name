@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react';
 import useFetch from './useFetch';
-import { UserPostContext } from '../components/User/UserPostContext';
+import { UserPostContext } from '../context/UserPostContext';
 
 const usePosts = () => {
   const { posts, setPosts, isPostsLoading, setIsPostsLoading, isPostsError, setIsPostsError } = useContext(UserPostContext);
