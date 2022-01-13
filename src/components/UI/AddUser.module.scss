@@ -28,8 +28,8 @@
     weight: 400;
   }
   &:optional {
-  border: 1px solid rgb(184, 22, 22);
-  box-shadow: 0 0 0.4rem rgb(184, 22, 22);
+    border: 1px solid rgb(184, 22, 22);
+    box-shadow: 0 0 0.4rem rgb(184, 22, 22);
   }
 }
 .userTeaxtarea {
@@ -89,7 +89,7 @@
   outline: 0;
   border: 0;
 }
-.inputError{
+.inputError {
   color: rgb(184, 22, 22);
   font: {
     size: 18px;

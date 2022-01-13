@@ -56,11 +56,7 @@ const AddUser = ({ userIdValue, className }) => {
         value={formik.values.body}
       />
       {formik.touched.body && formik.errors.body ? <div className={classes.inputError}>{formik.errors.body}</div> : null}
-      <button
-        className={classes.userSubmitButton}
-        disabled={(formik.touched.body && formik.errors.body) || (formik.touched.title && formik.errors.title) ? 'true' : ''}
-        type="submit"
-      >
+      <button className={classes.userSubmitButton} disabled={formik.dirty && !formik.isValid} type="submit">
         Add post
       </button>
     </form>

@@ -71,7 +71,8 @@ h3 {
     opacity: 0.8;
   }
 }
-.google, .facebook {
+.google,
+.facebook {
   margin-top: 50px;
   width: 100%;
   color: #080710;
@@ -81,7 +82,7 @@ h3 {
   border-radius: 5px;
   cursor: pointer;
 }
-.social{
+.social {
   display: flex;
   justify-content: space-between;
 }
