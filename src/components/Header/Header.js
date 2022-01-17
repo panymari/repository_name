@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SearchBar from '../UI/SearchBar';
 import classes from './Header.module.scss';
 import useUsers from '../../hooks/useUsers';
+import LogIn from '../../auth/LogIn';
+import LogOut from '../../auth/LogOut';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
@@ -28,11 +30,6 @@ const Header = () => {
     } else {
       setShowHeader(false);
     }
-  };
-  const history = useHistory();
-  const routeChange = () => {
-    const path = `/authorization`;
-    history.push(path);
   };
 
   useEffect(() => {
@@ -80,8 +77,12 @@ const Header = () => {
         <button className={classes.questionIcon}>
           <i className="fa fa-question-circle" />
         </button>
-        <button className={classes.userIcon} onClick={routeChange}>
+        <button className={classes.userIcon}>
           <i aria-hidden="true" className="fa fa-user" />
+          <div className={classes.block}>
+            <LogIn />
+            <LogOut />
+          </div>
         </button>
         <div className={classes.additions}>
           <button className={classes.ellipsisIcon}>

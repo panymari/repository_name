@@ -119,10 +119,16 @@
   background-color: black;
   position: absolute;
   white-space: nowrap;
-  left: 0;
-  top: 4rem;
   transition: all 0.3s ease;
   display: none;
+}
+.block:not(.userIcon > div) {
+  top: 4rem;
+  left: 0;
+}
+.userIcon > div{
+  top: 4.4rem;
+  right: 0;
 }
 .block > div {
   position: relative;
@@ -201,5 +207,11 @@ button {
 .userIcon {
   @media screen and (min-device-width: 320px) and (max-device-width: 1200px) {
     display: none;
+  }
+}
+.userIcon{
+  position: relative;
+  &:hover .block {
+    display: block;
   }
 }
