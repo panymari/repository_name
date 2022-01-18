@@ -5,6 +5,7 @@ import classes from './Header.module.scss';
 import useUsers from '../../hooks/useUsers';
 import LogIn from '../../auth/LogIn';
 import LogOut from '../../auth/LogOut';
+import useGoogle from '../../hooks/useGoogle';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
@@ -12,6 +13,9 @@ const Header = () => {
   const { users = [] } = useUsers();
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredUsers, setFilteredUsers] = useState([]);
+  const { googleUserObj } = useGoogle();
+  console.log(googleUserObj);
+
   useEffect(() => {
     if (searchQuery) {
       const usersFiltered = users.filter((item) => {
@@ -78,11 +82,12 @@ const Header = () => {
           <i className="fa fa-question-circle" />
         </button>
         <button className={classes.userIcon}>
-          <i aria-hidden="true" className="fa fa-user" />
-          <div className={classes.block}>
-            <LogIn />
-            <LogOut />
-          </div>
+          {googleUserObj ? (
+            <img alt="userPhoto" className={classes.googleUserPhoto} src={googleUserObj?.imageUrl} />
+          ) : (
+            <i aria-hidden="true" className="fa fa-user" />
+          )}
+          <div className={classes.block}>{googleUserObj ? <LogOut /> : <LogIn />}</div>
         </button>
         <div className={classes.additions}>
           <button className={classes.ellipsisIcon}>

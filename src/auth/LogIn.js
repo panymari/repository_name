@@ -2,12 +2,12 @@ import React from 'react';
 import { GoogleLogin } from 'react-google-login';
 import refreshTokenSetUp from '../utils/refreshTokenSetUp';
 
-const clientId = '364835572773-9a004jdd7i3mi2iq32n7fi7l96jnhulp.apps.googleusercontent.com';
+const clientId = process.env.GOOGLE_TOKEN;
 
 const LogIn = () => {
   const onSuccess = (res) => {
     console.log('[LogIn Success] currentUser:', res.profileObj);
-
+    localStorage.setItem('user', JSON.stringify(res.profileObj));
     refreshTokenSetUp(res);
   };
   const onFailure = (res) => {

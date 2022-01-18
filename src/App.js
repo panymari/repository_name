@@ -7,7 +7,6 @@ import Providers from './provider/Providers';
 
 const Users = lazy(() => import('./components/User/Users'));
 const UserPage = lazy(() => import('./components/User/UserPage'));
-const UserAuthorization = lazy(() => import('./components/User/UserAuthorization'));
 
 const App = () => {
   return (
@@ -18,7 +17,6 @@ const App = () => {
             <Header />
             <Switch>
               <Route component={Users} path="/users" />
-              <Route component={UserAuthorization} path="/authorization" />
               <Route component={UserPage} path="/user/:id" />
               <Redirect to="/" />
             </Switch>
