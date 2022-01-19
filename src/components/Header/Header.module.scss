@@ -127,7 +127,7 @@
   left: 0;
 }
 .userIcon > div {
-  top: 5.55rem;
+  top: 4.4rem;
   right: 0;
 }
 .block > div {
@@ -215,7 +215,14 @@ button {
     display: block;
   }
 }
-.googleUserPhoto{
+.googleUserPhoto {
   border-radius: 50%;
-  height: 3rem;
+  height: 1.8rem;
+}
+.googleProfile{
+  display: flex;
+  font-size: 1rem;
+}
+.googleInfo{
+  margin-left: 2rem;
 }

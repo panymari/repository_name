@@ -24,7 +24,7 @@ const LogIn = () => {
         onSuccess={onSuccess}
         render={(renderProps) => (
           <button disabled={renderProps.disabled} onClick={renderProps.onClick} style={{ fontSize: '1rem' }}>
-            <i aria-hidden="true" className="fa fa-google fa-2x" style={{ marginRight: '1rem' }} /> LogIn
+            <i aria-hidden="true" className="fa fa-sign-in" style={{ marginRight: '1rem' }} /> LogIn
           </button>
         )}
       />

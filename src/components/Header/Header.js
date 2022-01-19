@@ -87,7 +87,22 @@ const Header = () => {
           ) : (
             <i aria-hidden="true" className="fa fa-user" />
           )}
-          <div className={classes.block}>{googleUserObj ? <LogOut /> : <LogIn />}</div>
+          <div className={classes.block}>
+            {googleUserObj ? (
+              <>
+                <div className={classes.googleProfile}>
+                  <img alt="userPhoto" className={classes.googleUserPhoto} src={googleUserObj?.imageUrl} />
+                  <div className={classes.googleInfo}>
+                    <div>{googleUserObj?.name}</div>
+                    <div>{googleUserObj?.email}</div>
+                  </div>
+                </div>
+                <LogOut />
+              </>
+            ) : (
+              <LogIn />
+            )}
+          </div>
         </button>
         <div className={classes.additions}>
           <button className={classes.ellipsisIcon}>
