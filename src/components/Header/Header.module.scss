@@ -215,14 +215,25 @@ button {
     display: block;
   }
 }
-.googleUserPhoto {
+.googleUserPhoto { 
   border-radius: 50%;
-  height: 1.8rem;
+  height: 1.6rem;
+  width: 1.7rem;
 }
-.googleProfile{
+.googleUserPhotoProfile { 
+  border-radius: 50%;
+  margin-left: 1.5rem;
+  height: 2.3rem;
+  width: 2.4rem;
+}
+.googleProfile {
+  align-items: center;
   display: flex;
   font-size: 1rem;
 }
-.googleInfo{
+.googleInfo {
   margin-left: 2rem;
+}
+.googleUserName{
+  margin-bottom: 0.3rem;
 }

@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { GoogleLogout } from 'react-google-login';
-
-const clientId = '364835572773-9a004jdd7i3mi2iq32n7fi7l96jnhulp.apps.googleusercontent.com';
+import { GoogleUserContext } from '../context/GoogleUserContext';
+import classes from './Log.module.scss';
 
 const LogOut = () => {
+  const clientId = process.env.REACT_APP_GOOGLE_TOKEN;
+  const { setGoogleUser } = useContext(GoogleUserContext);
   const onSuccess = () => {
     console.log('LogOut was made successfully');
-    localStorage.clear();
+    setGoogleUser(null);
   };
   return (
-    <div>
+    <div className={classes.logOut}>
       <GoogleLogout
         buttonText="LogOut"
         clientId={clientId}
         onLogoutSuccess={onSuccess}
         render={(renderProps) => (
-          <button disabled={renderProps.disabled} onClick={renderProps.onClick} style={{ fontSize: '1rem' }}>
+          <button
+            disabled={renderProps.disabled}
+            onClick={renderProps.onClick}
+            style={{
+              fontSize: '1rem',
+              position: 'absolute',
+              width: '27rem',
+              height: '3.75rem',
+              top: '0',
+              left: '0',
+              textAlign: 'start',
+              paddingLeft: '3.25rem',
+            }}
+          >
             <i aria-hidden="true" className="fa fa-sign-out" style={{ marginRight: '1rem' }} /> LogOut
           </button>
         )}

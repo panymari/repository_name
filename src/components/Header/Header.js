@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import SearchBar from '../UI/SearchBar';
 import classes from './Header.module.scss';
 import useUsers from '../../hooks/useUsers';
 import LogIn from '../../auth/LogIn';
 import LogOut from '../../auth/LogOut';
-import useGoogle from '../../hooks/useGoogle';
+import { GoogleUserContext } from '../../context/GoogleUserContext';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
@@ -13,8 +14,8 @@ const Header = () => {
   const { users = [] } = useUsers();
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredUsers, setFilteredUsers] = useState([]);
-  const { googleUserObj } = useGoogle();
-  console.log(googleUserObj);
+  const { googleUser } = useContext(GoogleUserContext);
+  const count = useSelector((state) => state.counter.value);
 
   useEffect(() => {
     if (searchQuery) {
@@ -76,25 +77,27 @@ const Header = () => {
         </div>
       </div>
 
+      <div>{count}</div>
+
       <div className={classes.rightPart}>
         <SearchBar filteredUsers={filteredUsers} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         <button className={classes.questionIcon}>
           <i className="fa fa-question-circle" />
         </button>
         <button className={classes.userIcon}>
-          {googleUserObj ? (
-            <img alt="userPhoto" className={classes.googleUserPhoto} src={googleUserObj?.imageUrl} />
+          {googleUser ? (
+            <img alt="userPhoto" className={classes.googleUserPhoto} src={googleUser?.imageUrl} />
           ) : (
             <i aria-hidden="true" className="fa fa-user" />
           )}
           <div className={classes.block}>
-            {googleUserObj ? (
+            {googleUser ? (
               <>
                 <div className={classes.googleProfile}>
-                  <img alt="userPhoto" className={classes.googleUserPhoto} src={googleUserObj?.imageUrl} />
+                  <img alt="userPhoto" className={classes.googleUserPhotoProfile} src={googleUser?.imageUrl} />
                   <div className={classes.googleInfo}>
-                    <div>{googleUserObj?.name}</div>
-                    <div>{googleUserObj?.email}</div>
+                    <div className={classes.googleUserName}>{googleUser?.name}</div>
+                    <div>{googleUser?.email}</div>
                   </div>
                 </div>
                 <LogOut />
