@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import classes from './UserPage.module.scss';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import useUsers from '../../hooks/useUsers';
 import UserPosts from './UserPosts';
-import AddUser from '../UI/AddUser';
+import AddUser from '../UI/AddPost';
+import { loadUsersAsync } from '../../redux/reducer/users/usersThunks';
 
 const UserPage = () => {
   const params = useParams();
   const id = Number(params.id);
-  const { users = [], isLoading, isError } = useUsers();
+  const dispatch = useDispatch();
+
+  const { isLoading, users, isError } = useSelector((state) => state.users);
+
+  useEffect(() => {
+    dispatch(loadUsersAsync());
+  }, []);
 
   if (isLoading) {
     return <LoadProgressBar />;

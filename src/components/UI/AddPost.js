@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
 import cn from 'classnames';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import classes from './AddUser.module.scss';
-import { UserPostContext } from '../../context/UserPostContext';
+import { useDispatch, useSelector } from 'react-redux';
+import classes from './AddPost.module.scss';
+import { getData } from '../../redux/reducer/posts/postsSlice';
+import { loadPostsAsync } from '../../redux/reducer/posts/postsThunks';
 
 const AddUser = ({ userIdValue, className }) => {
-  const { posts, setPosts } = useContext(UserPostContext);
+  const dispatch = useDispatch();
+
+  const posts = useSelector((state) => state.posts.posts);
+
+  useEffect(() => {
+    dispatch(loadPostsAsync());
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -28,7 +36,8 @@ const AddUser = ({ userIdValue, className }) => {
       };
       axios.post('https://jsonplaceholder.typicode.com/posts', post).then((response) => {
         const userPostsCopy = [response.data, ...posts];
-        setPosts(userPostsCopy);
+
+        dispatch(getData(userPostsCopy));
       });
       resetForm({ values: '' });
     },

@@ -1,21 +1,26 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SearchBar from '../UI/SearchBar';
 import classes from './Header.module.scss';
-import useUsers from '../../hooks/useUsers';
 import LogIn from '../../auth/LogIn';
 import LogOut from '../../auth/LogOut';
-import { GoogleUserContext } from '../../context/GoogleUserContext';
+import { loadUsersAsync } from '../../redux/reducer/users/usersThunks';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
   const headerRef = useRef();
-  const { users = [] } = useUsers();
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredUsers, setFilteredUsers] = useState([]);
-  const { googleUser } = useContext(GoogleUserContext);
-  const count = useSelector((state) => state.counter.value);
+
+  const dispatch = useDispatch();
+
+  const users = useSelector((state) => state.users.users);
+  const googleUser = useSelector((state) => state.googleUser.googleUser);
+
+  useEffect(() => {
+    dispatch(loadUsersAsync());
+  }, []);
 
   useEffect(() => {
     if (searchQuery) {
@@ -76,8 +81,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      <div>{count}</div>
 
       <div className={classes.rightPart}>
         <SearchBar filteredUsers={filteredUsers} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />

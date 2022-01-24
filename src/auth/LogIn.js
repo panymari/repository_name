@@ -1,22 +1,23 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { GoogleLogin } from 'react-google-login';
+import { useDispatch } from 'react-redux';
 import refreshTokenSetUp from '../utils/refreshTokenSetUp';
-import { GoogleUserContext } from '../context/GoogleUserContext';
 import classes from './Log.module.scss';
+import { getData } from '../redux/reducer/googleUser/gooleUserSlice';
 
 const LogIn = () => {
   const clientId = process.env.REACT_APP_GOOGLE_TOKEN;
-  const { setGoogleUser } = useContext(GoogleUserContext);
+
+  const dispatch = useDispatch();
 
   const onSuccess = (res) => {
     console.log('[LogIn Success] currentUser:', res.profileObj);
-    setGoogleUser(res.profileObj);
+    dispatch(getData(res.profileObj));
     refreshTokenSetUp(res);
   };
   const onFailure = (res) => {
     console.log('[LogIn failed] res:', res);
   };
-  console.log(clientId);
   return (
     <div className={classes.logIn}>
       <GoogleLogin

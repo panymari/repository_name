@@ -1,14 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { GoogleLogout } from 'react-google-login';
-import { GoogleUserContext } from '../context/GoogleUserContext';
+import { useDispatch } from 'react-redux';
 import classes from './Log.module.scss';
+import { getData } from '../redux/reducer/googleUser/gooleUserSlice';
 
 const LogOut = () => {
   const clientId = process.env.REACT_APP_GOOGLE_TOKEN;
-  const { setGoogleUser } = useContext(GoogleUserContext);
+  const dispatch = useDispatch();
   const onSuccess = () => {
     console.log('LogOut was made successfully');
-    setGoogleUser(null);
+    dispatch(getData(null));
   };
   return (
     <div className={classes.logOut}>

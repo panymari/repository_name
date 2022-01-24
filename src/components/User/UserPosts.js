@@ -1,12 +1,19 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import cn from 'classnames';
+import { useDispatch, useSelector } from 'react-redux';
 import ErrorMessage from '../UI/ErrorMessage';
-import usePosts from '../../hooks/usePosts';
 import classes from './UserPosts.module.scss';
 import CapitalizeFirstLetter from '../../utils/CapitalizeFirstLetter';
+import { loadPostsAsync } from '../../redux/reducer/posts/postsThunks';
 
 const UserPosts = memo(({ userId, className }) => {
-  const { posts = [], isError } = usePosts();
+  const dispatch = useDispatch();
+
+  const { posts, isError } = useSelector((state) => state.posts);
+
+  useEffect(() => {
+    dispatch(loadPostsAsync());
+  }, []);
 
   if (isError) {
     return <ErrorMessage item="Could not load posts." />;
