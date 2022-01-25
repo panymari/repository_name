@@ -6,7 +6,7 @@ import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
 import UserPosts from './UserPosts';
 import AddUser from '../UI/AddPost';
-import { loadUsersAsync } from '../../redux/reducer/users/usersThunks';
+import { usersRequest } from '../../redux/reducer/users/usersRequest';
 
 const UserPage = () => {
   const params = useParams();
@@ -16,7 +16,7 @@ const UserPage = () => {
   const { isLoading, users, isError } = useSelector((state) => state.users);
 
   useEffect(() => {
-    dispatch(loadUsersAsync());
+    dispatch(usersRequest());
   }, []);
 
   if (isLoading) {

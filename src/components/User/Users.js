@@ -5,7 +5,7 @@ import classes from './Users.module.scss';
 import User from './User';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import { loadUsersAsync } from '../../redux/reducer/users/usersThunks';
+import { usersRequest } from '../../redux/reducer/users/usersRequest';
 
 const Users = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const Users = () => {
   const { isLoading, users, isError } = useSelector((state) => state.users);
 
   useEffect(() => {
-    dispatch(loadUsersAsync());
+    dispatch(usersRequest());
   }, []);
 
   if (isLoading) {
