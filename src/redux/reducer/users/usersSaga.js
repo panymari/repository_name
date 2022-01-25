@@ -1,10 +1,11 @@
-import { call, put } from 'redux-saga/effects';
-import { takeLeading } from 'saga-toolkit';
-import * as actions from './usersSlice'
+import { call, put, takeLeading } from 'redux-saga/effects';
+import { takeEveryAsync } from 'saga-toolkit/sagaToolkit';
+import * as actions from './usersSlice';
 import * as api from './usersRequest';
 
-function* getUsers() {
+export function* getUsers() {
   try {
+    console.log(111);
     const result = yield call(api.usersRequest);
     yield put(actions.fetchThings.setData(result));
   } catch (error) {
@@ -13,7 +14,5 @@ function* getUsers() {
 }
 
 export function* watchGetUsersRequest() {
-  yield takeLeading(actions.fetchThings.type, fetchThings);
+  yield takeLeading(actions.fetchThings.type, getUsers);
 }
-
-

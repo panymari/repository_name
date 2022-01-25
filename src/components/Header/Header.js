@@ -5,7 +5,7 @@ import SearchBar from '../UI/SearchBar';
 import classes from './Header.module.scss';
 import LogIn from '../../auth/LogIn';
 import LogOut from '../../auth/LogOut';
-import { usersRequest } from '../../redux/reducer/users/usersRequest';
+import { fetchThings } from '../../redux/reducer/users/usersSlice';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
@@ -19,8 +19,9 @@ const Header = () => {
   const googleUser = useSelector((state) => state.googleUser.googleUser);
 
   useEffect(() => {
-    dispatch(usersRequest());
-  }, [usersRequest]);
+    console.log(fetchThings());
+    dispatch(fetchThings());
+  }, []);
 
   useEffect(() => {
     if (searchQuery) {
