@@ -23,10 +23,7 @@
     "redux-normal-reducer": "^0.3.0",
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.1.3",
-<<<<<<< HEAD
     "redux-saga-effects": "^1.1.0",
-=======
->>>>>>> e99c93d14a69913c4018d26af134902e14ee8861
     "redux-thunk": "^2.3.0",
     "saga-toolkit": "^2.0.4",
     "sass": "^1.45.1",
