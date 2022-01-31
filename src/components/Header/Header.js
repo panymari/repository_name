@@ -5,7 +5,11 @@ import SearchBar from '../UI/SearchBar';
 import classes from './Header.module.scss';
 import LogIn from '../../auth/LogIn';
 import LogOut from '../../auth/LogOut';
+<<<<<<< HEAD
 import { setData } from '../../redux/reducer/users/usersSlice';
+=======
+import { fetchThings } from '../../redux/reducer/users/usersSlice';
+>>>>>>> e99c93d14a69913c4018d26af134902e14ee8861
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
@@ -18,7 +22,15 @@ const Header = () => {
   }, [dispatch]);
   const users = useSelector((state) => state.users.users);
   const googleUser = useSelector((state) => state.googleUser.googleUser);
+<<<<<<< HEAD
   console.log(users);
+=======
+
+  useEffect(() => {
+    console.log(fetchThings());
+    dispatch(fetchThings());
+  }, []);
+>>>>>>> e99c93d14a69913c4018d26af134902e14ee8861
 
   useEffect(() => {
     if (searchQuery) {
