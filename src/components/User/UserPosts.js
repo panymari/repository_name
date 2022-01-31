@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ErrorMessage from '../UI/ErrorMessage';
 import classes from './UserPosts.module.scss';
 import CapitalizeFirstLetter from '../../utils/CapitalizeFirstLetter';
-import { loadPostsAsync } from '../../redux/reducer/posts/postsThunks';
+import { setData } from '../../redux/reducer/posts/postsSlice';
 
 const UserPosts = memo(({ userId, className }) => {
   const dispatch = useDispatch();
@@ -12,8 +12,8 @@ const UserPosts = memo(({ userId, className }) => {
   const { posts, isError } = useSelector((state) => state.posts);
 
   useEffect(() => {
-    dispatch(loadPostsAsync());
-  }, []);
+    dispatch(setData());
+  }, [dispatch]);
 
   if (isError) {
     return <ErrorMessage item="Could not load posts." />;

@@ -6,12 +6,12 @@ export const googleUserSlice = createSlice({
     googleUser: null,
   },
   reducers: {
-    getData: (state, action) => {
+    setData: (state, action) => {
       state.googleUser = action.payload;
     },
   },
 });
 
-export const { getData } = googleUserSlice.actions;
+export const { setData } = googleUserSlice.actions;
 
 export default googleUserSlice.reducer;

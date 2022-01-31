@@ -5,7 +5,7 @@ import classes from './Users.module.scss';
 import User from './User';
 import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
-import { usersRequest } from '../../redux/reducer/users/usersRequest';
+import { setData } from '../../redux/reducer/users/usersSlice';
 
 const Users = () => {
   const dispatch = useDispatch();
@@ -13,8 +13,8 @@ const Users = () => {
   const { isLoading, users, isError } = useSelector((state) => state.users);
 
   useEffect(() => {
-    dispatch(usersRequest());
-  }, []);
+    dispatch(setData());
+  }, [dispatch]);
 
   if (isLoading) {
     return <LoadProgressBar />;

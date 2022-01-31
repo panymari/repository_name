@@ -3,7 +3,7 @@ import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import refreshTokenSetUp from '../utils/refreshTokenSetUp';
 import classes from './Log.module.scss';
-import { getData } from '../redux/reducer/googleUser/gooleUserSlice';
+import { setData } from '../redux/reducer/googleUser/gooleUserSlice';
 
 const LogIn = () => {
   const clientId = process.env.REACT_APP_GOOGLE_TOKEN;
@@ -12,7 +12,7 @@ const LogIn = () => {
 
   const onSuccess = (res) => {
     console.log('[LogIn Success] currentUser:', res.profileObj);
-    dispatch(getData(res.profileObj));
+    dispatch(setData(res.profileObj));
     refreshTokenSetUp(res);
   };
   const onFailure = (res) => {

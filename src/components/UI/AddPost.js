@@ -5,8 +5,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './AddPost.module.scss';
-import { getData } from '../../redux/reducer/posts/postsSlice';
-import { loadPostsAsync } from '../../redux/reducer/posts/postsThunks';
+import { setData } from '../../redux/reducer/posts/postsSlice';
 
 const AddUser = ({ userIdValue, className }) => {
   const dispatch = useDispatch();
@@ -14,8 +13,8 @@ const AddUser = ({ userIdValue, className }) => {
   const posts = useSelector((state) => state.posts.posts);
 
   useEffect(() => {
-    dispatch(loadPostsAsync());
-  }, []);
+    dispatch(setData());
+  }, [dispatch]);
 
   const formik = useFormik({
     initialValues: {
@@ -37,7 +36,7 @@ const AddUser = ({ userIdValue, className }) => {
       axios.post('https://jsonplaceholder.typicode.com/posts', post).then((response) => {
         const userPostsCopy = [response.data, ...posts];
 
-        dispatch(getData(userPostsCopy));
+        dispatch(setData(userPostsCopy));
       });
       resetForm({ values: '' });
     },

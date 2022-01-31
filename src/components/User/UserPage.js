@@ -6,7 +6,7 @@ import LoadProgressBar from '../UI/LoadProgressBar';
 import ErrorMessage from '../UI/ErrorMessage';
 import UserPosts from './UserPosts';
 import AddUser from '../UI/AddPost';
-import { usersRequest } from '../../redux/reducer/users/usersRequest';
+import { setData } from '../../redux/reducer/users/usersSlice';
 
 const UserPage = () => {
   const params = useParams();
@@ -16,8 +16,8 @@ const UserPage = () => {
   const { isLoading, users, isError } = useSelector((state) => state.users);
 
   useEffect(() => {
-    dispatch(usersRequest());
-  }, []);
+    dispatch(setData());
+  }, [dispatch]);
 
   if (isLoading) {
     return <LoadProgressBar />;

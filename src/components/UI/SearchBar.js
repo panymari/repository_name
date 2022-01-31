@@ -10,6 +10,8 @@ const SearchBar = ({ filteredUsers, searchQuery, setSearchQuery }) => {
     setHint(hint);
     setSearchQuery('');
   };
+  console.log(filteredUsers);
+
   return (
     <div className={classes.searchBar}>
       <input

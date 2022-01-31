@@ -2,14 +2,14 @@ import React from 'react';
 import { GoogleLogout } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import classes from './Log.module.scss';
-import { getData } from '../redux/reducer/googleUser/gooleUserSlice';
+import { setData } from '../redux/reducer/googleUser/gooleUserSlice';
 
 const LogOut = () => {
   const clientId = process.env.REACT_APP_GOOGLE_TOKEN;
   const dispatch = useDispatch();
   const onSuccess = () => {
     console.log('LogOut was made successfully');
-    dispatch(getData(null));
+    dispatch(setData(null));
   };
   return (
     <div className={classes.logOut}>

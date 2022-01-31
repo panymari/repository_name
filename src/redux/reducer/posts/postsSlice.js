@@ -4,7 +4,7 @@ export const postsSlice = createSlice({
   name: 'posts',
   initialState: {
     isLoading: false,
-    users: null,
+    posts: null,
     isError: null,
   },
   reducers: {
@@ -13,17 +13,17 @@ export const postsSlice = createSlice({
       state.posts = null;
       state.isError = null;
     },
-    getData: (state, action) => {
+    setData: (state, action) => {
       state.isLoading = false;
       state.posts = action.payload;
     },
-    error: (state, action) => {
+    setError: (state, action) => {
       state.isLoading = false;
       state.isError = action.payload;
     },
   },
 });
 
-export const { loading, getData, error } = postsSlice.actions;
+export const { loading, setData, setError } = postsSlice.actions;
 
 export default postsSlice.reducer;
