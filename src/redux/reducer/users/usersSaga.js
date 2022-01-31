@@ -7,7 +7,7 @@ function* handleGetUsers() {
     yield put(loading());
     const response = yield call(requestGetUsers);
     const { data } = response;
-    yield put(setData({ ...data }));
+    yield put(setData([...data]));
   } catch (error) {
     yield put(setError(error));
   }

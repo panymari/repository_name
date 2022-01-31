@@ -7,7 +7,7 @@ function* handleGetPosts() {
     yield put(loading());
     const response = yield call(requestGetPosts);
     const { data } = response;
-    yield put(setData({ ...data }));
+    yield put(setData([...data]));
   } catch (error) {
     yield put(setError(error));
   }
